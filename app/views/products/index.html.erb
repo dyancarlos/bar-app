@@ -1,0 +1,15 @@
+<%= form_for Product.new do |f| %>
+  <%= f.text_field :name, placeholder: "Nome" %><br />
+  <%= f.text_field :price, placeholder: "Preço" %><br />
+  <%= f.collection_select :category_id, Category.all, :id, :name %><br />
+  <%= f.submit %>
+<% end %>
+
+<hr />
+
+<h1>Produtos</h1>
+
+<% @products.each do |c| %>
+  <li><%= link_to "Del.", c, method: :delete %> - <%= c.name %> (<%= c.category.name %>)</li>
+<% end %>
+
