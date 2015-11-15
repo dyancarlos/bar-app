@@ -1,10 +1,8 @@
-<h1>Novo Pedido</h1>
+<h1>Novo Pedido <%= link_to "Salvar", :orders, method: :post %></h1>
 
 <% Product.all.each do |p| %>
   <li><%= link_to p.name, add_orders_path(id: p.id), remote: true %></li>
 <% end %>
 
-<br /><br />
-
-<%= link_to "Salvar", :orders, method: :post %>
-
+<h1>Resumo</h1>
+<div class="resume"></div>

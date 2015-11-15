@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :orders do
     collection do
       get :add
+      get :remove
     end
   end
 end

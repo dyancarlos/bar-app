@@ -10,14 +10,23 @@ class OrdersController < ApplicationController
   end
 
   def add
-    product = Product.find(params[:id])
+    @product    = Product.find(params[:id])
+    @identifier = rand(1000)
 
     session[:json]["items"] << {
-      id: product.id,
-      name: product.name,
-      price: product.price
+      id: @identifier,
+      name: @product.name,
+      price: @product.price
     }
 
-    render nothing: true
+    respond_to :js
+  end
+
+  def remove
+    @id = params[:id].to_i
+
+    session[:json]["items"] = session[:json]["items"].reject { |r| r["id"] == @id }
+
+    respond_to :js
   end
 end
