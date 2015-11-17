@@ -1,0 +1,13 @@
+<%= form_for Table.new do |f| %>
+  <%= f.text_field :customId, placeholder: "Numero" %><br />
+  <%= f.text_field :seats, placeholder: "Qnt Assentos" %><br />
+  <%= f.submit %>
+<% end %>
+
+<hr />
+
+<h1>Mesas</h1>
+
+<% @tables.each do |t| %>
+  <li><%= link_to "Del.", t, method: :delete %> - <%= "Mesa ##{t.customId}" %></li>
+<% end %>

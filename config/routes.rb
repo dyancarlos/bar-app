@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # root 'welcome#index'
+  root 'tables#index'
 
   resources :categories
   resources :products
+  resources :tables
 
   resources :orders do
     collection do
