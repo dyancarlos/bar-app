@@ -5,11 +5,19 @@
   <%= f.submit %>
 <% end %>
 
-<hr />
+<div data-role="page" id="page2">
+  <div data-role="header">
+    <%= link_to "", :categories, class: "ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" %>
+    <%= link_to "Resumo", "", class: "ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all" %>
+    <h1>Produtos</h1>
+  </div>
 
-<h1>Produtos</h1>
-
-<% @products.each do |c| %>
-  <li><%= link_to "Del.", c, method: :delete %> - <%= c.name %> (<%= c.category.name %>)</li>
-<% end %>
+  <div role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
+      <% @products.each do |p| %>
+        <li><%= link_to p.name, "#" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
