@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def new
-    @order = Order.new
-    session[:json] = @order
+#    @order = Order.new
+#    session[:json] = @order
   end
 
   def create
