@@ -8,12 +8,19 @@
     <ul data-role="listview" data-inset="true">
       <li data-role="list-divider">Mesa <%= current_table %></li>
       <% @summaries["items"].each do |product| %>
-        <li><%= product["name"] %> <span class="ui-li-count">R$ <%= product["price"] %></span></li>
+        <li class="product_<%= product['id'] %>">
+          <%= link_to product["name"], 
+            remove_orders_path(id: product["id"]), 
+            remote: true, 
+            data: { confirm: "Confirmar?" } %> 
+          <span class="ui-li-count">R$ <%= product["price"] %></span>
+        </li>
       <% end %>
     </ul>
   </div>
 
-	<div data-role="footer" data-position="fixed" align="center">
+  <div data-role="footer" data-position="fixed" align="center">
+    <%= link_to "Salvar", :orders, method: :post, class: "ui-btn ui-btn-inline" %>
 		<%= link_to "Fechar Mesa", :orders, method: :post, class: "ui-btn ui-btn-inline" %>
 	</div>
 </div>
