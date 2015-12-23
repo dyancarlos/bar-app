@@ -1,18 +1,10 @@
-<%#= form_for Table.new do |f| %>
-  <%#= f.text_field :customId, placeholder: "Numero" %>
-  <%#= f.text_field :seats, placeholder: "Qnt Assentos" %>
-  <%#= f.submit %>
-<%# end %>
-
 <div data-role="page" id="page1">
-    <div data-role="header">
-    <h1>Mesas</h1>
-  </div>
+  <div data-role="header"><h1>Mesas</h1></div>
 
   <div role="main" class="ui-content">
     <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
       <% @tables.each do |t| %>
-        <li><%= link_to t.customId, :categories %></li>
+        <li><%= link_to t.customId, categories_path(table_id: t.id) %></li>
       <% end %>
     </ul>
   </div>
