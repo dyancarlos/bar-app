@@ -4,7 +4,7 @@
   <div role="main" class="ui-content">
     <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
       <% @tables.each do |t| %>
-        <li><%= link_to t.customId, categories_path(table_id: t.id) %></li>
+        <li><%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %></li>
       <% end %>
     </ul>
   </div>
