@@ -1,0 +1,21 @@
+<div data-role="page" id="page2">
+  <div data-role="header">
+    <%= link_to "", :categories, class: "ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" %>
+    <h1>Resumo</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">Mesa <%= current_table %></li>
+      <% @summaries["items"].each do |product| %>
+        <li><%= product["name"] %> <span class="ui-li-count">R$ <%= product["price"] %></span></li>
+      <% end %>
+    </ul>
+  </div>
+
+	<div data-role="footer" data-position="fixed" align="center">
+		<%= link_to "Fechar Mesa", :orders, method: :post, class: "ui-btn ui-btn-inline" %>
+	</div>
+</div>
+
+
