@@ -3,8 +3,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-    Order.create(session[:order])
-    redirect_to :tables
+    order = Order.where(id: session[:order]["_id"]["$oid"]).first
+
+    if order.blank?
+      Order.create(session[:order])
+    else
+      order.update_attributes(session[:order])
+    end
+
+    redirect_to :root
   end
 
   def add
