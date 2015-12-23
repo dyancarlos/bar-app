@@ -1,7 +1,7 @@
 <div data-role="page" id="page2">
   <div data-role="header">
     <%= link_to "", :categories, class: "ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" %>
-    <%= link_to "CREATE", :orders, method: :post, class: "ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all" %>
+    <%= link_to "Resumo", "", class: "ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all" %>
     <h1>Produtos</h1>
   </div>
 
@@ -12,5 +12,9 @@
       <% end %>
     </ul>
   </div>
+
+	<div data-role="footer" data-position="fixed" align="center">
+		<%= link_to "Salvar", :orders, method: :post, class: "ui-btn ui-btn-inline" %>
+	</div>
 </div>
 
