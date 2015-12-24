@@ -1,3 +1,25 @@
 // Place all the styles related to the tables controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$size: 100px;
+
+ul.tables li {
+	background: #CCC;
+	border-radius: 50%;
+	display: inline-block;
+	height: $size;
+	width: auto;
+	margin: 0 auto;
+}
+
+ul.tables li a {
+	display: table-cell;
+	vertical-align: middle;
+	height: $size;
+	width: $size;
+	text-align: center;
+  font-size: 25px;
+  color: #000 !important;
+  text-decoration: none;
+}
