@@ -7,6 +7,7 @@
 
   <div role="main" class="ui-content">
     <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
+      <li data-role="list-divider">Categorias</li>
       <% @categories.each do |c| %>
         <li><%= link_to c.name, products_path(id: c.id) %></li>
       <% end %>
