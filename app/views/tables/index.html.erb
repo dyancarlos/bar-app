@@ -4,7 +4,9 @@
   <div role="main" class="ui-content">
     <ul class="tables">
       <% @tables.each do |t| %>
-        <li><%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %></li>
+        <li style="background: <%= t.return_table_color %>">
+          <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
+        </li>
       <% end %>
     </ul>
   </div>
