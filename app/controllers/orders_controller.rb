@@ -1,4 +1,12 @@
 class OrdersController < ApplicationController
+
+  # TODO Extrair isso para outro lugar
+  PRICES = {
+            "P" => 10,
+            "M" => 20,
+            "G" => 30
+            }
+
   def new
   end
 
@@ -42,6 +50,21 @@ class OrdersController < ApplicationController
     }
 
     respond_to :js
+  end
+
+  # Add product to JSON through Form(Pizza)
+  def add_from_form
+    @identifier = rand(1000)
+
+    session[:order]["items"] << {
+      id: @identifier,
+      name: "Pizza",
+      price: PRICES[params[:size]],
+      size: params[:size],
+      flavors: params[:flavors]
+    }
+
+    redirect_to :categories
   end
 
   # Remove product from JSON
