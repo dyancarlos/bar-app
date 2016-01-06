@@ -4,9 +4,14 @@
 <% end %>
 
 <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
-  <li data-role="list-divider">Categorias</li>
   <% @categories.each do |c| %>
-    <li><%= link_to c.name, products_path(id: c.id, type: c.name) %></li>
+    <li>
+      <%= link_to products_path(id: c.id, type: c.name) do %>
+        <%= image_tag("image.jpg") %>
+        <h2><%= c.name %></h2>
+        <p>Total: <%= c.products.size %></p>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
