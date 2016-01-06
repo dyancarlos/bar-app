@@ -4,34 +4,7 @@
 <% end %>
 
 <% if params[:type] == "Pizzas" %>
-  <%= form_tag :add_from_form_orders, method: :get do %>
-    <fieldset data-role="controlgroup">
-      <%= label_tag "radio-choice-1", "Pequena" %>
-      <%= radio_button_tag 'size', 'P', true, id: "radio-choice-1" %>
-
-      <%= label_tag "radio-choice-2", "Média" %>
-      <%= radio_button_tag 'size', 'M', false, id: "radio-choice-2" %>
-
-      <%= label_tag "radio-choice-3", "Grande" %>
-      <%= radio_button_tag 'size', 'G', false, id: "radio-choice-3" %>
-    </fieldset>
-
-    <fieldset data-role="controlgroup">
-      <%= check_box_tag 'checkbox-v-2a', 'calabresa', false, name: "flavors[]" %>
-      <%= label_tag "checkbox-v-2a", "Calabresa" %>
-
-      <%= check_box_tag 'checkbox-v-2b', 'frango', false, name: "flavors[]" %>
-      <%= label_tag "checkbox-v-2b", "Frango" %>
-      
-      <%= check_box_tag 'checkbox-v-2c', 'coracao', false, name: "flavors[]" %>
-      <%= label_tag "checkbox-v-2c", "Coraçao" %>
-
-      <%= check_box_tag 'checkbox-v-2d', 'portuguesa', false, name: "flavors[]" %>
-      <%= label_tag "checkbox-v-2d", "Portuguesa" %>
-    </fieldset>
-    
-    <%= submit_tag "Adicionar" %>
-  <% end %>
+  <%= render "pizza" %>
 <% else %>
   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
     <li data-role="list-divider">Produtos</li>
