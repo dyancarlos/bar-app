@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BarApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+  <head>
+    <title>BarApp</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
 
-<%= yield %>
+    <div data-role="page">
+      <div data-role="header">
+        <%= yield(:header) %>
+        
+        <% if show_buttons.include?(params[:controller]) %>
+          <%= link_to "Resumo", :summaries, class: "ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all" %>
+        <% end %>
+      </div>
 
-</body>
+      <div role="main" class="ui-content">
+        <%= yield %>
+      </div>
+
+      <div data-role="footer" data-position="fixed" align="center">
+        <%= yield(:footer) %>
+      </div>
+    </div>
+
+  </body>
 </html>

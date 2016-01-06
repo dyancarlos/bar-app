@@ -1,13 +1,11 @@
-<div data-role="page" id="page1">
-  <div data-role="header"><h1>Mesas</h1></div>
+<% content_for(:header) do %>
+  <h1>Mesas</h1>
+<% end %>
 
-  <div role="main" class="ui-content">
-    <ul class="tables">
-      <% @tables.each do |t| %>
-        <li style="background: <%= t.return_table_color %>">
-          <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+<ul class="tables">
+  <% @tables.each do |t| %>
+    <li style="background: <%= t.return_table_color %>">
+      <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
+    </li>
+  <% end %>
+</ul>

@@ -6,9 +6,15 @@ class ApplicationController < ActionController::Base
   before_filter :create_order_session
   before_filter :set_current_table
 
-  helper_method :current_table
+  helper_method :current_table, :show_buttons
 
   private
+  # Controllers to show buttons on header OR footer
+  #
+  def show_buttons
+    ["categories", "products"]
+  end
+
   # Define order session
   #
   def create_order_session
