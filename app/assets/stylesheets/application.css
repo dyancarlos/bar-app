@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.btn-green {
+  background: green !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+}
+
+.btn-orange {
+  background: #FF7400 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+}

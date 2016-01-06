@@ -9,7 +9,7 @@
       <%= link_to products_path(id: c.id, type: c.name) do %>
         <%= image_tag("image.jpg") %>
         <h2><%= c.name %></h2>
-        <p>Total: <%= c.products.size %></p>
+        <p><%= c.name %></p>
       <% end %>
     </li>
   <% end %>

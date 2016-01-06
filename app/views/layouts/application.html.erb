@@ -26,8 +26,8 @@
 
       <div data-role="footer" data-position="fixed" align="center">
         <% if show_buttons_footer.include?(params[:controller]) %> 
-          <%= link_to "Salvar", :orders, method: :post, class: "ui-btn ui-btn-inline" %>
-          <%= link_to "Fechar Mesa", :pay_orders, class: "ui-btn ui-btn-inline" %>
+          <%= link_to "Salvar", :orders, method: :post, class: "ui-btn ui-btn-inline ui-corner-all btn-green" %>
+          <%= link_to "Fechar Mesa", :pay_orders, data: {confirm: "Confirmar?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-orange" %>
         <% end %>
       </div>
     </div>
