@@ -7,11 +7,12 @@
   <li data-role="list-divider">Mesa <%= current_table %></li>
   <% @summaries["items"].each do |product| %>
     <li class="product_<%= product['id'] %>">
-      <%= link_to product["name"], 
-        remove_orders_path(id: product["id"]), 
-        remote: true, 
-        data: { confirm: "Confirmar?" } %> 
-      <span class="ui-li-count">R$ <%= product["price"] %></span>
+      <%= link_to remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Confirmar?" } do %>
+        <h2><%= product["name"] %> <%= product["size"] %></h2>
+        <% unless product["flavors"].blank? %>
+          <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
+        <% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>
