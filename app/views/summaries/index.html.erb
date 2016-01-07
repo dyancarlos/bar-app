@@ -15,4 +15,8 @@
       <% end %>
     </li>
   <% end %>
+
+  <% if @summaries["items"].blank? %>
+    <li>Não há produtos adicionados.</li>
+  <% end %>
 </ul>
