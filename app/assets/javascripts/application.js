@@ -19,8 +19,8 @@ $(document).ready(function(){
   
   // "Add" button to add PIZZA
   //
-  $('.form-submit').click(function(){
-    $('form').submit();
+  $(document).on("click", ".form-submit", function(){
+    $('.pizza-form').submit();
   });
 
 });
