@@ -28,4 +28,6 @@
 
 .btn-blue {
   background: #4096EE !important;
+  color: #FFF !important;
+  text-shadow: none !important;
 }

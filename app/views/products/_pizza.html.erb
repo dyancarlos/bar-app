@@ -10,19 +10,14 @@
     <%= radio_button_tag 'size', 'G', false, id: "radio-choice-3" %>
   </fieldset>
 
-  <fieldset data-role="controlgroup">
-    <%= check_box_tag 'checkbox-v-2a', 'calabresa', false, name: "flavors[]" %>
-    <%= label_tag "checkbox-v-2a", "Calabresa" %>
-
-    <%= check_box_tag 'checkbox-v-2b', 'frango', false, name: "flavors[]" %>
-    <%= label_tag "checkbox-v-2b", "Frango" %>
-    
-    <%= check_box_tag 'checkbox-v-2c', 'coracao', false, name: "flavors[]" %>
-    <%= label_tag "checkbox-v-2c", "Coraçao" %>
-
-    <%= check_box_tag 'checkbox-v-2d', 'portuguesa', false, name: "flavors[]" %>
-    <%= label_tag "checkbox-v-2d", "Portuguesa" %>
+  <fieldset data-role="controlgroup" data-mini="true">
+    <% Order::FLAVORS.each_with_index do |f, index| %>
+      <%= check_box_tag "checkbox-#{index}", f.capitalize, false, name: "flavors[]" %>
+      <%= label_tag "checkbox-#{index}", f.capitalize %>
+    <% end %>
   </fieldset>
-  
-  <%= submit_tag "Adicionar", class: "btn-blue" %>
+<% end %>
+
+<% content_for(:add_pizza_button) do %>
+  <%= link_to "Add", "", remote: true, method: :post, class: "ui-btn ui-btn-inline ui-corner-all btn-blue form-submit" %>
 <% end %>

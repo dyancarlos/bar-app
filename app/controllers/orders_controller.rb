@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
   # TODO Extrair isso para outro lugar
   #
   PRICES = {
-            "P" => 10,
-            "M" => 20,
-            "G" => 30
+            "P" => 20.0,
+            "M" => 31.0,
+            "G" => 36.0
             }
 
   def new
