@@ -1,12 +1,12 @@
 <%= form_tag :add_from_form_orders, remote: true do %>
-  <fieldset data-role="controlgroup">
-    <%= label_tag "radio-choice-1", "Pequena" %>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <%= label_tag "radio-choice-1", "P" %>
     <%= radio_button_tag 'size', 'P', true, id: "radio-choice-1" %>
 
-    <%= label_tag "radio-choice-2", "Média" %>
+    <%= label_tag "radio-choice-2", "M" %>
     <%= radio_button_tag 'size', 'M', false, id: "radio-choice-2" %>
 
-    <%= label_tag "radio-choice-3", "Grande" %>
+    <%= label_tag "radio-choice-3", "G" %>
     <%= radio_button_tag 'size', 'G', false, id: "radio-choice-3" %>
   </fieldset>
 
@@ -24,5 +24,5 @@
     <%= label_tag "checkbox-v-2d", "Portuguesa" %>
   </fieldset>
   
-  <%= submit_tag "Adicionar" %>
+  <%= submit_tag "Adicionar", class: "btn-blue" %>
 <% end %>
