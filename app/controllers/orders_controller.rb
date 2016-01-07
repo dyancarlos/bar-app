@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   # TODO Extrair isso para outro lugar
+  #
   PRICES = {
             "P" => 10,
             "M" => 20,
@@ -53,6 +54,7 @@ class OrdersController < ApplicationController
   end
 
   # Add product to JSON through Form(Pizza)
+  #
   def add_from_form
     @identifier = rand(1000)
 
@@ -64,7 +66,7 @@ class OrdersController < ApplicationController
       flavors: params[:flavors]
     }
 
-    redirect_to :categories
+    respond_to :js
   end
 
   # Remove product from JSON

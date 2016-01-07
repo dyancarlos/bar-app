@@ -1,4 +1,4 @@
-<%= form_tag :add_from_form_orders, method: :get do %>
+<%= form_tag :add_from_form_orders, remote: true do %>
   <fieldset data-role="controlgroup">
     <%= label_tag "radio-choice-1", "Pequena" %>
     <%= radio_button_tag 'size', 'P', true, id: "radio-choice-1" %>
