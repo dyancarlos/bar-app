@@ -2,11 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$size: 80px;
+$size: 60px;
 
 ul.tables li {
-	background: #CCC;
-	border-radius: 10%;
+	background: #EFEFEF;
 	display: inline-block;
 	height: $size;
 	width: auto;
@@ -20,7 +19,7 @@ ul.tables li a {
 	width: $size;
 	text-align: center;
   font-size: 25px;
-  color: #FFF !important;
+  color: #666 !important;
   font-weight: normal !important;
   text-decoration: none;
 }

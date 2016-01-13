@@ -14,6 +14,13 @@
  *= require_self
  */
 
+.ui-header {
+  background: #066BA0 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+  border-color: #066BA0 !important;
+}
+
 .btn-green {
   background: green !important;
   color: #FFF !important;

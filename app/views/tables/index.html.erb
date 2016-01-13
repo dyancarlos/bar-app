@@ -4,7 +4,7 @@
 
 <ul class="tables">
   <% @tables.each do |t| %>
-    <li style="background: <%= t.return_table_color %>">
+    <li style="border-bottom: 3px solid <%= t.return_table_color %>">
       <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
     </li>
   <% end %>
