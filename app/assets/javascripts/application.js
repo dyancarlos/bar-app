@@ -17,13 +17,13 @@
 
 $(document).ready(function(){
   // Remove Cache
-  jQuery('div').live('pagehide', function(event, ui){
-    var page = jQuery(event.target);
-
-    if(page.attr('data-cache') == 'never'){
-      page.remove();
-    };
-  });
+//  jQuery('div').live('pagehide', function(event, ui){
+//    var page = jQuery(event.target);
+//
+//    if(page.attr('data-cache') == 'never'){
+//      page.remove();
+//    };
+//  });
 
   // "Add" button to add PIZZA
   //
