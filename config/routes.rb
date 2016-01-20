@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products
   resources :tables
   resources :summaries
+  resources :admin
 
   resources :orders do
     collection do
