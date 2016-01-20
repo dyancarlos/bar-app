@@ -1,6 +1,12 @@
 class CategoriesController < ApplicationController
+  layout "admin", only: :new
+
   def index
     @categories = Category.all
+  end
+
+  def new
+    @category = Category.new
   end
 
   def create
