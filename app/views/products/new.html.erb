@@ -1,0 +1,8 @@
+<h1>Novo Produto</h1>
+
+<%= form_for @product do |f| %>
+  <%= f.text_field :name, placeholder: "Nome" %><br />
+  <%= f.text_field :price, placeholder: "Preço" %><br />
+  <%= f.collection_select :category_id, Category.all, :id, :name %><br />
+  <%= f.submit %>
+<% end %>

@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
+  layout "admin", only: :new
+
   def index
     @products = Product.where(category_id: params[:id])
+  end
+
+  def new
+    @product = Product.new
   end
 
   def create
