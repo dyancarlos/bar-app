@@ -7,7 +7,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <h1>Admin</h1>
+
+    <div>
+      <%= link_to "home", :admin_index %> | 
+      <%= link_to "nova mesa", :new_table %> | 
+      <%= link_to "nova categoria", :new_category %> | 
+      <%= link_to "novo produto", :new_product %> | 
+      <%= link_to "novo sabor", "" %>
+    </div>
+
+    <hr />
+    
     <%= yield %>
   </body>
 </html>
