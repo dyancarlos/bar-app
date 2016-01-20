@@ -1,6 +1,12 @@
 class TablesController < ApplicationController
+  layout "admin", only: :new
+
   def index
     @tables = Table.all
+  end
+
+  def new
+    @table = Table.new
   end
 
   def create
