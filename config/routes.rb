@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :tables
   resources :summaries
   resources :admin
+  resources :flavors
 
   resources :orders do
     collection do
