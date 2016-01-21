@@ -1,9 +1,21 @@
 <h1>Novo Sabor</h1>
 
-<%= form_for @flavor do |f| %>
-  <%= f.text_field :name, placeholder: "Nome" %><br />
-  <p><%= f.check_box :swet %> Doce?</p>
-  <p><%= f.check_box :special %> Especial?</p>
-  <%= f.submit %>
-<% end %>
+<%= render "form" %>
 
+<hr />
+
+<table border="1">
+  <tr>
+    <th>Nome</th>
+    <th>Opcoes</th>
+  </tr>
+  <% @flavors.each do |f| %>
+    <tr>
+      <td><%= f.name %></td>
+      <td>
+        <%= link_to "Editar", edit_flavor_path(f) %> |
+        <%= link_to "Excluir", f, method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
