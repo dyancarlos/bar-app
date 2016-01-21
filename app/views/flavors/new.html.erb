@@ -2,6 +2,8 @@
 
 <%= form_for @flavor do |f| %>
   <%= f.text_field :name, placeholder: "Nome" %><br />
+  <p><%= f.check_box :swet %> Doce?</p>
+  <p><%= f.check_box :special %> Especial?</p>
   <%= f.submit %>
 <% end %>
 
