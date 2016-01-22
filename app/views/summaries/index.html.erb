@@ -12,6 +12,7 @@
         <% unless product["flavors"].blank? %>
           <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
         <% end %>
+        <p>R$ <%= product["price"] %></p>
       <% end %>
     </li>
   <% end %>
