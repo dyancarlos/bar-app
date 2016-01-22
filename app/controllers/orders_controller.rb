@@ -1,13 +1,5 @@
 class OrdersController < ApplicationController
 
-  # TODO Extrair isso para outro lugar
-  #
-  PRICES = {
-            "P" => 20.0,
-            "M" => 31.0,
-            "G" => 36.0
-            }
-
   def new
   end
 
@@ -60,8 +52,8 @@ class OrdersController < ApplicationController
 
     session[:order]["items"] << {
       id: @identifier,
-      name: "Pizza",
-      price: PRICES[params[:size]],
+      name: "Pizza #{'com borda' if params[:border]}",
+      price: Order.calculate_price(params[:size], params[:border], params[:special]),
       size: params[:size],
       flavors: params[:flavors]
     }
