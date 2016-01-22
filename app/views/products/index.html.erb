@@ -4,7 +4,7 @@
 <% end %>
 
 <% if params[:type] == "Pizzas" %>
-  <%= render "pizza" %>
+  <%= render partial: "pizza", locals: { flavors: @flavors }%>
 <% else %>
   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
     <% @products.each do |p| %>
