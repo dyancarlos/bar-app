@@ -38,3 +38,11 @@
   color: #FFF !important;
   text-shadow: none !important;
 }
+
+.swet label {
+  background: #FFF8C7 !important;
+}
+
+.special label {
+  background: #FFD9C5 !important;
+}
