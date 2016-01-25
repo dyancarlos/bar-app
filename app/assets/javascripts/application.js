@@ -31,4 +31,9 @@ $(document).ready(function(){
     $('.pizza-form').submit();
   });
 
+//  $(document).on("change", ".special .ui-checkbox", function() {
+//    $(".special-check").prop('checked', true);
+//    $(".special-label").addClass("ui-btn-active");
+//  });
+
 });
