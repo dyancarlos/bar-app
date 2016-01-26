@@ -12,7 +12,7 @@
         <% unless product["flavors"].blank? %>
           <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
         <% end %>
-        <p>R$ <%= product["price"] %></p>
+        <p><%= reais(product["price"]) %></p>
       <% end %>
     </li>
   <% end %>
@@ -21,7 +21,9 @@
     <li>Não há produtos adicionados.</li>
   <% end %>
 
-  <%#= @summaries["items"].map { |v| v["price"] }.inject(:+) %> 
+  <li data-role="list-divider">
+    <%= reais(Order.total(@summaries["items"])) %>
+  </li>
 </ul>
 
 

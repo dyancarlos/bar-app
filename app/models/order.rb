@@ -1,8 +1,8 @@
 class Order
   include Mongoid::Document
 
-  PIZZA_PRICES  = { "P" => 20, "M" => 31, "G" => 36 }
-  BORDER_PRICES = { "P" => 3, "M" => 4, "G" => 5 }
+  PIZZA_PRICES  = { "P" => 20.0, "M" => 31.0, "G" => 36.0 }
+  BORDER_PRICES = { "P" => 3.0, "M" => 4.0, "G" => 5.0 }
   SPECIAL_PRICE = 6
 
   field :payed, type: Boolean, default: ->{ false }
@@ -16,5 +16,9 @@ class Order
     pizza += BORDER_PRICES[size] if border
     pizza += SPECIAL_PRICE       if special
     pizza
+  end
+
+  def self.total(obj)
+    obj.map { |v| v["price"] }.inject(:+)
   end
 end

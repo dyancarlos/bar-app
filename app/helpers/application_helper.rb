@@ -12,4 +12,10 @@ module ApplicationHelper
   def swet?(obj)
     "swet" if obj
   end
+
+  # Convert to Reais
+  #
+  def reais(value)
+    number_to_currency(value, unit: "R$ ", separator: ",", delimiter: "")
+  end
 end
