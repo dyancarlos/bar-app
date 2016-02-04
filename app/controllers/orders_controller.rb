@@ -39,7 +39,8 @@ class OrdersController < ApplicationController
     session[:order]["items"] << {
       id: @identifier,
       name: @product.name,
-      price: @product.price
+      price: @product.price,
+      type: @product.category.name
     }
 
     respond_to :js
@@ -55,7 +56,8 @@ class OrdersController < ApplicationController
       name: "Pizza #{'com borda' if params[:border]}",
       price: Order.calculate_price(params[:size], params[:border], params[:special]),
       size: params[:size],
-      flavors: params[:flavors]
+      flavors: params[:flavors],
+      type: "Pizza"
     }
 
     respond_to :js
