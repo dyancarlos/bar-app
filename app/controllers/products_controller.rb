@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(category_id: params[:id])
-    @flavors  = Flavor.all.order(special: 1)
+    @flavors  = Flavor.all.order(name: 1)
   end
 
   def new
