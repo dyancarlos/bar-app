@@ -56,7 +56,7 @@ $(document).ready(function(){
 
   // HIDE LOADING
   // 
-  $('.show-page-loading-msg').bind('ajax:complete', function() {
-    $.mobile.loading( "hide" );
+  $(document).ajaxStop(function() {
+    $.mobile.loading('hide');
   });
 });
