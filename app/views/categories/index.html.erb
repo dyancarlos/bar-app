@@ -5,12 +5,6 @@
 
 <ul data-role="listview" data-inset="true">
   <% @categories.each do |c| %>
-    <li>
-      <%= link_to products_path(id: c.id, type: c.name) do %>
-        <%= image_tag("image.jpg") %>
-        <h2><%= c.name %></h2>
-        <p><%= c.name %></p>
-      <% end %>
-    </li>
+    <li><%= link_to c.name.upcase, products_path(id: c.id, type: c.name) %></li>
   <% end %>
 </ul>
