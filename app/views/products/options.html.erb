@@ -1,0 +1,26 @@
+<% content_for(:header) do %>
+  <%= link_to "", :back, class: "ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" %>
+  <h1>Mesa <%= current_table %></h1>
+<% end %>
+
+<div class="options-product-name"> 
+  <span><%= @product.name %></span><br />
+  <b><%= reais(@product.price) %></b>
+</div>
+
+<p>
+  <input type="range" name="slider-1" id="slider-1" min="1" max="20" value="1">
+</p>
+
+<% unless Product::RULES[@product.category.name].blank? %>
+  <fieldset data-role="controlgroup" data-mini="true">
+    <% Product::RULES[@product.category.name].each_with_index do |rule, index| %>
+      <%= check_box_tag "checkbox-#{index}", rule, false, name: "rule[]" %>
+      <%= label_tag "checkbox-#{index}", rule %>
+    <% end %>
+  </fieldset>
+<% end %>
+
+<% content_for(:add_pizza_button) do %>
+  <%= link_to "Add", "", remote: true, method: :post, class: "ui-btn ui-btn-inline ui-corner-all btn-blue form-submit show-page-loading-msg" %>
+<% end %>

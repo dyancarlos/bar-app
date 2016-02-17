@@ -8,7 +8,7 @@
 <% else %>
   <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Procurar">
     <% @products.each do |p| %>
-      <li><%= link_to p.name, add_orders_path(id: p.id), remote: true %></li>
+      <li><%= link_to p.name, options_products_path(id: p.id) %></li>
     <% end %>
   </ul>
 <% end %>
