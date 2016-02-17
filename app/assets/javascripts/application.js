@@ -36,6 +36,12 @@ $(document).ready(function(){
     $('.pizza-form').submit();
   });
 
+  // "Add" button to add PIZZA
+  //
+  $(document).on("click", ".form-submit-options", function(){
+    $('.options-form').submit();
+  });
+
   // SHOW LOADING
   //
   $( document ).on( "click", ".show-page-loading-msg", function() {

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :orders do
     collection do
-      get :add
+      post :add
       post :add_from_form
       get :remove
       get :pay

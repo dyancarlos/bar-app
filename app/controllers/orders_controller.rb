@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
 
   def new
+    # To better view in postman
+    render json: session[:order]
   end
 
   # Create or update order
@@ -33,13 +35,18 @@ class OrdersController < ApplicationController
   # Add product to JSON
   #
   def add
-    @product    = Product.find(params[:id])
+    puts "+++++ #{params[:quantity]}"
+    puts "+++++ #{params[:options]}"
+
+    @product    = Product.find(params[:product_id])
     @identifier = rand(1000)
 
     session[:order]["items"] << {
       id: @identifier,
       name: @product.name,
       price: @product.price,
+      quantity: params[:quantity].to_i,
+      options: params[:options],
       type: @product.category.name
     }
 
@@ -55,6 +62,7 @@ class OrdersController < ApplicationController
       id: @identifier,
       name: "Pizza #{'com borda' if params[:border]}",
       price: Order.calculate_price(params[:size], params[:border], params[:special]),
+      quantity: 1,
       size: params[:size],
       flavors: params[:flavors],
       type: "Pizza"
