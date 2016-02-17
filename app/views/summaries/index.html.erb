@@ -8,11 +8,11 @@
   <% @summaries["items"].each do |product| %>
     <li class="product_<%= product['id'] %>">
       <%= link_to remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Confirmar?" } do %>
-        <h2><%= product["name"] %> <%= product["size"] %></h2>
+        <h2><%= product["quantity"] %> x <%= product["name"] %> <%= product["size"] %></h2>
         <% unless product["flavors"].blank? %>
           <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
         <% end %>
-        <p><%= reais(product["price"]) %></p>
+        <p><%= reais(Order.total_product(product)) %></p>
       <% end %>
     </li>
   <% end %>

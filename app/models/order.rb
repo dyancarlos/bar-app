@@ -19,6 +19,10 @@ class Order
   end
 
   def self.total(obj)
-    obj.map { |v| v["price"] }.inject(:+)
+    obj.map { |v| v["price"] * v["quantity"] }.inject(:+)
+  end
+
+  def self.total_product(obj)
+    obj["quantity"] * obj["price"]
   end
 end
