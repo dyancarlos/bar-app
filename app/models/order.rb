@@ -18,10 +18,14 @@ class Order
     pizza
   end
 
+  # Calculate the total of the entire items of the Hash
+  #
   def self.total(obj)
     obj.map { |v| v["price"] * v["quantity"] }.inject(:+)
   end
 
+  # Calculate the total of an specific item (quantity * price)
+  #
   def self.total_product(obj)
     obj["quantity"] * obj["price"]
   end

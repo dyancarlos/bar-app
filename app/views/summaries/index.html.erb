@@ -4,15 +4,11 @@
 <% end %>
 
 <ul data-role="listview" data-inset="true">
-  <li data-role="list-divider">Mesa <%= current_table %></li>
   <% @summaries["items"].each do |product| %>
     <li class="product_<%= product['id'] %>">
-      <%= link_to remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Confirmar?" } do %>
-        <h2><%= product["quantity"] %> x <%= product["name"] %> <%= product["size"] %></h2>
-        <% unless product["flavors"].blank? %>
-          <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
-        <% end %>
-        <p><%= reais(Order.total_product(product)) %></p>
+      <h2><%= product["quantity"] %>x <%= product["name"] %> <%= product["size"] %></h2>
+      <% unless product["flavors"].blank? %>
+        <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
       <% end %>
     </li>
   <% end %>
@@ -20,10 +16,6 @@
   <% if @summaries["items"].blank? %>
     <li>Não há produtos adicionados.</li>
   <% end %>
-
-  <li data-role="list-divider">
-    <%= reais(Order.total(@summaries["items"])) %>
-  </li>
 </ul>
 
 

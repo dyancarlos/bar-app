@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
 
     session[:order]["items"] << {
       id: @identifier,
-      name: "Pizza #{'com borda' if params[:border]}",
+      name: "Pizza#{' com borda' if params[:border]}",
       price: Order.calculate_price(params[:size], params[:border], params[:special]),
       quantity: 1,
       size: params[:size],
