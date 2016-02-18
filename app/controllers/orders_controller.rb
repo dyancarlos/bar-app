@@ -34,10 +34,7 @@ class OrdersController < ApplicationController
 
   # Add product to JSON
   #
-  def add
-    puts "+++++ #{params[:quantity]}"
-    puts "+++++ #{params[:options]}"
-
+  def add_other
     @product    = Product.find(params[:product_id])
     @identifier = rand(1000)
 
@@ -55,7 +52,7 @@ class OrdersController < ApplicationController
 
   # Add product to JSON through Form(Pizza)
   #
-  def add_from_form
+  def add_pizza
     @identifier = rand(1000)
 
     session[:order]["items"] << {

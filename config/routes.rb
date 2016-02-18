@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
   resources :orders do
     collection do
-      post :add
-      post :add_from_form
+      post :add_other
+      post :add_pizza
       get :remove
       get :pay
     end
