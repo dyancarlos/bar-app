@@ -77,4 +77,25 @@ class OrdersController < ApplicationController
 
     respond_to :js
   end
+
+  # TODO: Eliminar redundancia
+  # Add 1 to quantity
+  #
+  def add_quantity
+    id = params[:id].to_i
+
+    session[:order]["items"].detect {|a| a["id"] == id}["quantity"] += 1
+
+    respond_to :js
+  end
+
+  # Remove 1 from quantity
+  #
+  def remove_quantity
+    id = params[:id].to_i
+
+    session[:order]["items"].detect {|a| a["id"] == id}["quantity"] -= 1
+
+    respond_to :js
+  end
 end

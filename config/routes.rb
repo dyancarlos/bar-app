@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       post :add_pizza
       get :remove
       get :pay
+      get :add_quantity
+      get :remove_quantity
     end
   end
 end
