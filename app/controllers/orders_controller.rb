@@ -82,9 +82,10 @@ class OrdersController < ApplicationController
   # Add 1 to quantity
   #
   def add_quantity
-    id = params[:id].to_i
+    @id       = params[:id].to_i
+    @quantity = session[:order]["items"].detect {|a| a["id"] == @id}["quantity"]
 
-    session[:order]["items"].detect {|a| a["id"] == id}["quantity"] += 1
+    session[:order]["items"].detect {|a| a["id"] == @id}["quantity"] += 1
 
     respond_to :js
   end
@@ -92,9 +93,12 @@ class OrdersController < ApplicationController
   # Remove 1 from quantity
   #
   def remove_quantity
-    id = params[:id].to_i
+    @id       = params[:id].to_i
+    @quantity = session[:order]["items"].detect {|a| a["id"] == @id}["quantity"]
 
-    session[:order]["items"].detect {|a| a["id"] == id}["quantity"] -= 1
+    unless @quantity == 1
+      session[:order]["items"].detect {|a| a["id"] == @id}["quantity"] -= 1
+    end
 
     respond_to :js
   end

@@ -6,7 +6,12 @@
 <ul data-role="listview" data-inset="true">
   <% @summaries["items"].each do |product| %>
     <li class="product_<%= product['id'] %>">
-      <h2><%= product["quantity"] %>x <%= product["name"] %> <%= product["size"] %></h2>
+      <h2>
+        <span class="qnt_<%= product['id'] %>"><%= product["quantity"] %></span>x
+        
+        <%= product["name"] %> <%= product["size"] %>
+      </h2>
+      
       <% unless product["flavors"].blank? %>
         <p><%= product["flavors"].map(&:capitalize).join(", ") %></p>
       <% end %>
@@ -14,7 +19,7 @@
       <p>
         <%= link_to "-", remove_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary red show-page-loading-msg" %>
         <%= link_to "+", add_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary green show-page-loading-msg" %>
-        <%= link_to "remover", remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Confirmar?" } %>
+        <%= link_to "remover", remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Remover?" } %>
       </p>
     </li>
   <% end %>
