@@ -17,8 +17,10 @@
       <% end %>
 
       <p>
-        <%= link_to "-", remove_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary red show-page-loading-msg" %>
-        <%= link_to "+", add_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary green show-page-loading-msg" %>
+        <% unless product["type"] == "Pizza" %>
+          <%= link_to "-", remove_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary red show-page-loading-msg" %>
+          <%= link_to "+", add_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary green show-page-loading-msg" %>
+        <% end %>
         <%= link_to "remover", remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Remover?" } %>
       </p>
     </li>
