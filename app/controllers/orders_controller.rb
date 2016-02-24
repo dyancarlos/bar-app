@@ -35,15 +35,25 @@ class OrdersController < ApplicationController
   # Add product to JSON
   #
   def add_other
+    options     = []
     @product    = Product.find(params[:product_id])
     @identifier = rand(1000)
+
+    # TODO: Extrair para um metodo
+    unless params[:options].blank?
+      params[:options].map { |val| options << val }
+    end
+
+    unless params[:observation].blank?
+      options << params[:observation]
+    end
 
     session[:order]["items"] << {
       id: @identifier,
       name: @product.name,
       price: @product.price,
       quantity: params[:quantity].to_i,
-      options: params[:options],
+      options: options,
       type: @product.category.name
     }
 

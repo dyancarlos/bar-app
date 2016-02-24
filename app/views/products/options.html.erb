@@ -12,6 +12,7 @@
   <%= hidden_field_tag :product_id, @product.id %>
 
   <p><input type="range" name="quantity" id="quantity" min="1" max="20" value="1"></p>
+  <p><%= text_field_tag :observation, "", placeholder: "Observação" %></p>
 
   <% unless Product::RULES[@product.category.name].blank? %>
     <fieldset data-role="controlgroup" data-mini="true">
