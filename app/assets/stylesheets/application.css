@@ -46,3 +46,15 @@
 .special label {
   background: #FFD9C5 !important;
 }
+
+.quantity {
+  font-size: 35px;
+  text-align: center;
+}
+.quantity span {
+  padding: 0px 10px 0px 10px;
+}
+.quantity a {
+  font-size: 35px;
+  text-decoration: none;
+}
