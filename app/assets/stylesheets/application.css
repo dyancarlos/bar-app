@@ -15,10 +15,10 @@
  */
 
 .ui-header {
-  background: #066BA0 !important;
+  background: #000 !important;
   color: #FFF !important;
   text-shadow: none !important;
-  border-color: #066BA0 !important;
+  border-color: #000 !important;
 }
 
 .btn-green {

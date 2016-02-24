@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
       type: @product.category.name
     }
 
-    respond_to :js
+    redirect_to "/products?id=#{@product.category.id}"
   end
 
   # Add product to JSON through Form(Pizza)
