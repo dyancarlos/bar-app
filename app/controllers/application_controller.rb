@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   # Controllers to show buttons on footer
   #
   def show_buttons_footer
-    ["categories", "products", "summaries"]
+    ["summaries"]
   end
 
   # Define order session
