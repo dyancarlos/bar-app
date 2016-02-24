@@ -27,7 +27,6 @@
       </div>
 
       <div data-role="footer" data-position="fixed" align="center">
-        <%= yield(:add_pizza_button) %>
         <% if show_buttons_footer.include?(params[:controller]) %> 
           <%= link_to "Salvar", :orders, method: :post, data: {confirm: "Salvar Pedido?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-green" %>
           <%= link_to "Fechar Mesa", :pay_orders, data: {confirm: "Fechar Mesa?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-orange" %>

@@ -14,32 +14,15 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $(document).ready(function(){
-//  $(document).on("change", ".special .ui-checkbox", function() {
-//    $(".special-check").prop('checked', true);
-//    $(".special-label").addClass("ui-btn-active");
-//  });
+  // Remove Cache
+  // 
+  jQuery('div').live('pagehide', function(event, ui){
+    var page = jQuery(event.target);
 
-// Remove Cache
-//  jQuery('div').live('pagehide', function(event, ui){
-//    var page = jQuery(event.target);
-//
-//    if(page.attr('data-cache') == 'never'){
-//      page.remove();
-//    };
-//  });
-
-  // "Add" button to add PIZZA
-  //
-  $(document).on("click", ".form-submit", function(){
-    $('.pizza-form').submit();
-  });
-
-  // "Add" button to add PIZZA
-  //
-  $(document).on("click", ".form-submit-options", function(){
-    $('.options-form').submit();
+    if(page.attr('data-cache') == 'never'){
+      page.remove();
+    };
   });
 
   // SHOW LOADING

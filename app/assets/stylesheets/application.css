@@ -40,11 +40,11 @@
 }
 
 .swet label {
-  background: #FFF8C7 !important;
+  border-left: 3px solid orange !important;
 }
 
 .special label {
-  background: #FFD9C5 !important;
+  border-left: 3px solid green !important;
 }
 
 .quantity {
