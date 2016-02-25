@@ -18,7 +18,7 @@
     <%= link_to "+", "", class: "add" %>
   </div>
 
-  <p><%= text_field_tag :observation, "", placeholder: "Observação" %></p>
+  <div><%= text_field_tag :observation, "", placeholder: "Observação" %></div>
 
   <% unless Product::RULES[@product.category.name].blank? %>
     <fieldset data-role="controlgroup" data-mini="true">

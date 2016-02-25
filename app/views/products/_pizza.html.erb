@@ -16,6 +16,8 @@
     <%= check_box_tag 'border', 'true', false, id: "radio-choice-5" %>
   </fieldset>
 
+  <div><%= text_field_tag :observation, "", placeholder: "Observação" %></div>
+
   <fieldset data-role="controlgroup" data-mini="true">
     <% flavors.each_with_index do |f, index| %>
       <span class="<%= special?(f.special) %> <%= swet?(f.swet) %>">

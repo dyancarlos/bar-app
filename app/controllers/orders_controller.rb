@@ -31,12 +31,12 @@ class OrdersController < ApplicationController
     @identifier = rand(1000)
 
     session[:order]["items"] << {
-      id:       @identifier,
-      name:     @product.name,
-      price:    @product.price,
-      quantity: params[:quantity].to_i,
-      options:  manipulate_options_product(params[:observation], params[:options]),
-      type:     @product.category.name
+      id:           @identifier,
+      name:         @product.name,
+      price:        @product.price,
+      quantity:     params[:quantity].to_i,
+      type:         @product.category.name,
+      observation:  manipulate_options_product(params[:observation], params[:options])
     }
 
     redirect_to "/products?id=#{@product.category.id}"
@@ -46,13 +46,14 @@ class OrdersController < ApplicationController
     @identifier = rand(1000)
 
     session[:order]["items"] << {
-      id:       @identifier,
-      name:     "Pizza#{' com borda' if params[:border]}",
-      price:    Order.calculate_price(params[:size], params[:border], params[:special]),
-      quantity: 1,
-      size:     params[:size],
-      flavors:  params[:flavors],
-      type:     "Pizza"
+      id:          @identifier,
+      name:        "Pizza#{' com borda' if params[:border]}",
+      price:       Order.calculate_price(params[:size], params[:border], params[:special]),
+      quantity:    1,
+      type:        "Pizza",
+      size:        params[:size],
+      flavors:     params[:flavors],
+      observation: params[:observation]
     }
 
     respond_to :js
@@ -61,6 +62,7 @@ class OrdersController < ApplicationController
   def remove
     @id = params[:id].to_i
     session[:order]["items"] = session[:order]["items"].reject { |r| r["id"] == @id }
+
     respond_to :js
   end
 
@@ -68,6 +70,7 @@ class OrdersController < ApplicationController
     @id       = params[:id].to_i
     @quantity = session[:order]["items"].detect {|a| a["id"] == @id}["quantity"]
     session[:order]["items"].detect {|a| a["id"] == @id}["quantity"] += 1
+
     respond_to :js
   end
 
@@ -77,6 +80,7 @@ class OrdersController < ApplicationController
     unless @quantity == 1
       session[:order]["items"].detect {|a| a["id"] == @id}["quantity"] -= 1
     end
+
     respond_to :js
   end
 
