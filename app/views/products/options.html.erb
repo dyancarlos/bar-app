@@ -3,9 +3,9 @@
   <h1>Mesa <%= current_table %></h1>
 <% end %>
 
-<div class="options-product-name"> 
-  <span><%= @product.name %></span><br />
+<div class="options-product-name">
   <b><%= reais(@product.price) %></b>
+  <span><%= @product.name %></span>
 </div>
 
 <%= form_tag :add_other_orders, class: "options-form" do %>
@@ -13,9 +13,9 @@
   <%= hidden_field_tag :quantity, 1, class: "quantity" %>
 
   <div class="quantity">
-    <%= link_to "-", "", class: "remove" %>
+    <%= link_to "-", "", class: "remove black" %>
     <span class="span-quantity">1</span>
-    <%= link_to "+", "", class: "add" %>
+    <%= link_to "+", "", class: "add black" %>
   </div>
 
   <div><%= text_field_tag :observation, "", placeholder: "Observação" %></div>
