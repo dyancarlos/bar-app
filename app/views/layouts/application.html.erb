@@ -17,7 +17,7 @@
         <% if show_buttons.include?(params[:controller]) %> 
           <%= link_to :summaries, class: "qnt-link absolute-right" do %>
             <span class="qnt"><%= count_items %></span>
-            <i class='material-icons'>list</i>
+            <i class='material-icons'>shopping_basket</i>
           <% end %>
         <% end %>
 
@@ -30,8 +30,8 @@
 
       <div data-role="footer" data-position="fixed" align="center">
         <% if show_buttons_footer.include?(params[:controller]) %> 
-          <%= link_to "Salvar", :orders, method: :post, data: {confirm: "Salvar Pedido?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-green" %>
-          <%= link_to "Fechar Mesa", :pay_orders, data: {confirm: "Fechar Mesa?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-orange" %>
+          <%= link_to "<i class='material-icons'>done</i>".html_safe, :orders, method: :post, data: {confirm: "Salvar Pedido?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-green" %>
+          <%= link_to "<i class='material-icons'>receipt</i>".html_safe, :pay_orders, data: {confirm: "Fechar Mesa?"}, class: "ui-btn ui-btn-inline ui-corner-all btn-orange" %>
         <% end %>
       </div>
     </div>

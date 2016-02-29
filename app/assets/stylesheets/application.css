@@ -22,15 +22,17 @@
 }
 
 .btn-green {
-  background: green !important;
+  background: #4caf50 !important;
   color: #FFF !important;
   text-shadow: none !important;
+  border-radius: 100px !important;
 }
 
 .btn-orange {
-  background: #FF7400 !important;
+  background: #f9a825 !important;
   color: #FFF !important;
   text-shadow: none !important;
+  border-radius: 100px !important;
 }
 
 .btn-blue {
