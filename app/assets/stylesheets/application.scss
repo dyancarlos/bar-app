@@ -1,0 +1,170 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$header-color: #4db6ac;
+$qnt-color:    #009688;
+$size: 60px;
+
+.absolute-right { position: absolute; right: 10px; top: 10px; }
+.absolute-left { position: absolute; left: 10px; top: 10px; }
+.page { background: #F1F1F1 !important; }
+
+a.black { color: #000 !important; }
+
+.header {
+  background: $header-color;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+
+  h1 {
+    font-size: 17px;
+    color: #FFF;
+    text-shadow: none;
+    margin: 0px;
+  }
+
+  .qnt {
+    position: relative;
+    top: -8px;
+    display: inline-block;
+    border-radius: 100px;
+    height: 15px;
+    width: 20px;
+    text-align: center;
+    padding: 3px 0px 1px 0px;
+    background: $qnt-color;
+  }
+
+  a.qnt-link {
+    text-decoration: none;
+    text-shadow: none;
+    color: #FFF !important;
+    font-weight: normal;
+    font-size: 11px;
+  }
+
+  a.back-link {
+    color: #FFF !important;
+    text-shadow: none;
+  }
+}
+
+.options-product-name {
+  padding: 10px;
+  background: #FFF;
+  margin: -15px -15px 10px -15px;
+  border-bottom: 1px solid #ddd;
+  color: #666;
+
+  & b { color: #000; float: right; }
+}
+
+.btn-fixed-bottom {
+  position: fixed;
+  bottom: 0px;
+  z-index: 2;
+  background: #F1F1F1;
+  left: 0px;
+  padding: 0px 15px 0px 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ui-header {
+  background: #000 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+  border-color: #000 !important;
+}
+
+.btn-green {
+  background: #4caf50 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+  border-radius: 100px !important;
+}
+
+.btn-orange {
+  background: #f9a825 !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+  border-radius: 100px !important;
+}
+
+.btn-blue {
+  background: #4096EE !important;
+  color: #FFF !important;
+  text-shadow: none !important;
+}
+
+.swet label {
+  border-left: 3px solid orange !important;
+}
+
+.special label {
+  border-left: 3px solid green !important;
+}
+
+.quantity {
+  font-size: 50px;
+  text-align: center;
+}
+
+.quantity span {
+  padding: 0px 10px 0px 10px;
+}
+
+.quantity a {
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.button-summary {
+  width: 25px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: none !important;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 20px;
+  border-radius: 100px;
+}
+
+.green { background: #a5d6a7; color: #1b5e20 !important; }
+.red { background: #ef9a9a; color: #b71c1c !important; }
+.orange { background: #ffb74d; color: #e65100 !important; }
+
+ul.tables li {
+	background: #FFF;
+	display: inline-block;
+	height: $size;
+	width: auto;
+	margin: 0 auto;
+  border-radius: 100px;
+}
+
+ul.tables li a {
+	display: table-cell;
+	vertical-align: middle;
+	height: $size;
+	width: $size;
+	text-align: center;
+  font-size: 25px;
+  color: #666 !important;
+  font-weight: normal !important;
+  text-decoration: none;
+}
