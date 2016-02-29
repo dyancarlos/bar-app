@@ -12,7 +12,7 @@
   </head>
   <body>
 
-    <div data-role="page" class="page">
+    <div data-role="page" class="page" data-url="<%= request.path %>">
       <div class="header">
         <% if show_buttons.include?(params[:controller]) %> 
           <%= link_to :summaries, class: "qnt-link absolute-right" do %>
