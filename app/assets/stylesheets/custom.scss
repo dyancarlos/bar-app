@@ -55,3 +55,14 @@ a.black { color: #000 !important; }
 
   & b { color: #000; float: right; }
 }
+
+.btn-fixed-bottom {
+  position: fixed;
+  bottom: 0px;
+  z-index: 2;
+  background: #F1F1F1;
+  left: 0px;
+  padding: 0px 15px 0px 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
