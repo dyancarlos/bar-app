@@ -18,4 +18,8 @@ module ApplicationHelper
   def reais(value)
     number_to_currency(value, unit: "R$ ", separator: ",", delimiter: "")
   end
+
+  def back_link(path)
+    return link_to "<i class='material-icons'>skip_previous</i>".html_safe, path, class: "back-link absolute-left"
+  end
 end

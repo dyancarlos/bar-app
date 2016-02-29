@@ -1,0 +1,44 @@
+$header-color: #4db6ac;
+$qnt-color:    #009688;
+
+.absolute-right { position: absolute; right: 10px; top: 10px; }
+.absolute-left { position: absolute; left: 10px; top: 10px; }
+
+.header {
+  background: $header-color;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+
+  h1 {
+    font-size: 17px;
+    color: #FFF;
+    text-shadow: none;
+    margin: 0px;
+    font-weight: normal;
+  }
+
+  .qnt {
+    position: relative;
+    top: -5px;
+    display: table-cell;
+    border-radius: 100px;
+    height: 25px;
+    width: 30px;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+    background: $qnt-color;
+  }
+
+  a.qnt-link {
+    text-decoration: none;
+    text-shadow: none;
+    color: #FFF !important;
+    font-weight: normal;
+  }
+
+  a.back-link {
+    color: #FFF !important;
+    text-shadow: none;
+  }
+}

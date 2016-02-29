@@ -7,19 +7,21 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name=apple-mobile-web-app-capable content=yes>
-    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=apple-mobile-web-app-status-bar-style content=white>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
 
     <div data-role="page">
-      <div data-role="header">
-        <%= yield(:header) %>
-        
+      <div class="header">
         <% if show_buttons.include?(params[:controller]) %> 
-          <%= link_to :summaries, class: "ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all" do %>
-            <span class="qnt"><%= count_items %></span> Itens
+          <%= link_to :summaries, class: "qnt-link absolute-right" do %>
+            <%#= count_items %>
+            <i class='material-icons'>list</i>
           <% end %>
         <% end %>
+
+        <%= yield(:header) %>
       </div>
 
       <div role="main" class="ui-content">
