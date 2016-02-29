@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .button-summary {
-  padding: 5px;
+  width: 25px;
   text-decoration: none;
-  color: #FFF !important;
+  text-align: center;
   text-shadow: none !important;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 20px;
+  border-radius: 100px;
 }
 
-.green { background: green; }
-.red { background: red; }
+.green { background: #a5d6a7; color: #1b5e20 !important; }
+.red { background: #ef9a9a; color: #b71c1c !important; }
+.orange { background: #ffb74d; color: #e65100 !important; }

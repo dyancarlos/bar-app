@@ -8,7 +8,6 @@
     <li class="product_<%= product['id'] %>">
       <h2>
         <span class="qnt_<%= product['id'] %>"><%= product["quantity"] %></span>x
-        
         <%= product["name"] %> <%= product["size"] %>
       </h2>
       
@@ -18,10 +17,10 @@
 
       <p>
         <% unless product["type"] == "Pizza" %>
-          <%= link_to "-", remove_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary red show-page-loading-msg" %>
+          <%= link_to "-", remove_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary orange show-page-loading-msg" %>
           <%= link_to "+", add_quantity_orders_path(id: product["id"]), remote: true, class: "button-summary green show-page-loading-msg" %>
         <% end %>
-        <%= link_to "remover", remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Remover?" } %>
+        <%= link_to "x", remove_orders_path(id: product["id"]), remote: true, data: { confirm: "Remover?" }, class: "button-summary red show-page-loading-msg" %>
       </p>
     </li>
   <% end %>

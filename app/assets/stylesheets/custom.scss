@@ -22,13 +22,13 @@ a.black { color: #000 !important; }
 
   .qnt {
     position: relative;
-    top: -5px;
-    display: table-cell;
+    top: -8px;
+    display: inline-block;
     border-radius: 100px;
-    height: 25px;
-    width: 30px;
-    padding: 5px 0px 0px 0px;
+    height: 15px;
+    width: 20px;
     text-align: center;
+    padding: 3px 0px 1px 0px;
     background: $qnt-color;
   }
 
@@ -37,6 +37,7 @@ a.black { color: #000 !important; }
     text-shadow: none;
     color: #FFF !important;
     font-weight: normal;
+    font-size: 11px;
   }
 
   a.back-link {
