@@ -49,10 +49,25 @@ $(document).ready(function(){
     $.mobile.loading('hide');
   });
 
-
+  // Limita marcar 4 sabores
+  //
   $(".flavor input[type='checkbox']").bind("change", function() {
     var count = $(".flavor input[type='checkbox']:checked").length;
     if(count > 4) { $(this).prop('checked', false); }
+  });
+
+  // Marca "especial" para pizzas especiais
+  // 
+  $(".special input[type='checkbox']").bind("change", function() {
+    var count = $(".special input[type='checkbox']:checked").length;
+
+    if(count >= 1){
+      $(".special-check").prop('checked', true);
+      $(".special-label").addClass("ui-btn-active");
+    } else {
+      $(".special-check").prop('checked', false);
+      $(".special-label").removeClass("ui-btn-active");
+    }
   });
 
 });
