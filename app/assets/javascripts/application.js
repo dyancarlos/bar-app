@@ -63,10 +63,8 @@ $(document).ready(function(){
 
     if(count >= 1){
       $(".special-check").prop('checked', true);
-      $(".special-label").addClass("ui-btn-active");
     } else {
       $(".special-check").prop('checked', false);
-      $(".special-label").removeClass("ui-btn-active");
     }
   });
 
