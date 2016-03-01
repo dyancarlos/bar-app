@@ -3,12 +3,19 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :create_order_session
-  before_filter :set_current_table
+  before_filter :create_order_session,
+                :set_current_table,
+                :verify_if_session_is_setted
 
-  helper_method :current_table, :show_buttons, :show_buttons_footer
+  helper_method :current_table,
+                :show_buttons,
+                :show_buttons_footer
 
   private
+  def verify_if_session_is_setted
+    redirect_to :root if session[:order].blank?
+  end
+
   # Controllers to show buttons on header
   #
   def show_buttons

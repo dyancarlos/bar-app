@@ -1,4 +1,6 @@
 class TablesController < ApplicationController
+  skip_before_filter :verify_if_session_is_setted
+
   layout "admin", only: :new
 
   def index
