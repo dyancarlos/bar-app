@@ -20,7 +20,7 @@
 
   <fieldset data-role="controlgroup" data-mini="true">
     <% flavors.each_with_index do |f, index| %>
-      <span class="<%= special?(f.special) %> <%= swet?(f.swet) %>">
+      <span class="<%= special?(f.special) %> <%= swet?(f.swet) %> flavor">
         <%= check_box_tag "checkbox-#{index}", f.name.capitalize, false, name: "flavors[]" %>
         <%= label_tag "checkbox-#{index}", f.name %>
       </span>

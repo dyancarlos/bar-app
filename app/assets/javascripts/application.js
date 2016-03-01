@@ -17,13 +17,13 @@
 $(document).ready(function(){
   // Remove Cache
   // 
-  jQuery('div').live('pagehide', function(event, ui){
-    var page = jQuery(event.target);
+  //jQuery('div').live('pagehide', function(event, ui){
+  //  var page = jQuery(event.target);
 
-    if(page.attr('data-cache') == 'never'){
-      page.remove();
-    };
-  });
+  //  if(page.attr('data-cache') == 'never'){
+  //    page.remove();
+  //  };
+  //});
 
   // SHOW LOADING
   //
@@ -48,4 +48,11 @@ $(document).ready(function(){
   $(document).ajaxStop(function() {
     $.mobile.loading('hide');
   });
+
+
+  $(".flavor input[type='checkbox']").bind("change", function() {
+    var count = $(".flavor input[type='checkbox']:checked").length;
+    if(count > 4) { $(this).prop('checked', false); }
+  });
+
 });
