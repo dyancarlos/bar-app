@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  skip_before_filter :verify_if_session_is_setted, only: :get_all_orders
+
   def new
     render json: session[:order]
   end
@@ -50,7 +52,7 @@ class OrdersController < ApplicationController
       name:        "Pizza#{' com borda' if params[:border]}",
       price:       Order.calculate_price(params[:size], params[:border], params[:special]),
       quantity:    1,
-      type:        "Pizza",
+      type:        "Pizzas",
       size:        params[:size],
       flavors:     params[:flavors],
       observation: params[:observation]

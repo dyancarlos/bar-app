@@ -1,0 +1,15 @@
+<% unless order.items.blank? %>
+  <div class="order">
+    <b><%= order.table.customId %></b>
+
+    <br /><br />
+
+    <% order.items.each do |item| %>
+      <div>
+        <p><%= item['quantity'] %>x <%= item['name'] %> <%= item['size'] %></p>
+        <p><%= item['flavors'].map(&:capitalize).join(", ") unless item['flavors'].blank? %></p>
+        <p><%= item['observations'] %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

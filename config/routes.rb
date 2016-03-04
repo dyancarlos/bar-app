@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :summaries
   resources :admin
   resources :flavors
+  resources :shower
 
   resources :products do
     collection do
