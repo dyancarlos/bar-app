@@ -1,16 +1,7 @@
-<style>
-  .order {
-    background: #EFEFEF;
-    padding: 10px;
-    width: 600px;
-    margin: 0 auto 10px auto;
-  }
-</style>
-
 <div align="center" class="categories" data-type="<%= params[:category] %>">
-  <% Category.all.each do |c| %>
-    <%= link_to c.name, shower_index_path(category: c.name) %> | 
-  <% end %>
+  <%= link_to "Cozinha", shower_index_path(category: "Pizzas") %> | 
+  <%= link_to "Bebidas", shower_index_path(category: "Bebidas") %> | 
+  <%= link_to "Petiscos", shower_index_path(category: "Petiscos") %>
 </div>
 
 <br />

@@ -1,13 +1,26 @@
 <% unless order.items.blank? %>
   <div class="order">
-    <b><%= order.table.customId %></b>
+    <div class="order-table-number">
+      <%= order.table.customId %>
+    </div>
 
-    <br /><br />
+    <div class="order-time">
+      <%= time_ago_in_words(order.created_at) %>
+    </div>
+    <div class="clear"></div>
+
+    <br />
 
     <% order.items.each do |item| %>
-      <div>
-        <p><%= item['quantity'] %>x <%= item['name'] %> <%= item['size'] %></p>
-        <p><%= item['flavors'].map(&:capitalize).join(", ") unless item['flavors'].blank? %></p>
+      <div class="order-items">
+        <h3><%= item['quantity'] %>x <%= item['name'] %> <%= item['size'] %></h3>
+    
+        <% unless item['flavors'].blank? %>
+          <% item['flavors'].each do |f| %>
+            <li><%= f %></li>
+          <% end %>
+        <% end %>  
+
         <p><%= item['observations'] %></p>
       </div>
     <% end %>
