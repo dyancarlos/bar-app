@@ -19,9 +19,9 @@
           <% item['flavors'].each do |f| %>
             <li><%= f %></li>
           <% end %>
-        <% end %>  
+        <% end %>
 
-        <p><%= item['observations'] %></p>
+        <p><%= item['observation'].map(&:upcase).join(", ") %> </p>
       </div>
     <% end %>
   </div>

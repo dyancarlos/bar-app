@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
       type:        "Pizzas",
       size:        params[:size],
       flavors:     params[:flavors],
-      observation: params[:observation]
+      observation: [params[:observation]]
     }
 
     respond_to :js
