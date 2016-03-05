@@ -5,7 +5,9 @@ class ShowerController < ApplicationController
 
   def index
     @type = params[:type]
-    orders = Order.all.order_by(created_at: 'desc')
+    orders = Order.all.where(payed: false).
+                       and(created_at: (1.day.ago..Time.now)).
+                       order_by(created_at: 'desc')
 
     if @type == "Pizzas"
       @orders = orders.select {|d| d.items.delete_if {|c| c["type"] == "Bebidas" or c["type"] == "Petiscos"}}
