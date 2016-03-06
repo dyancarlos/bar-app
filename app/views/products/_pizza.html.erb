@@ -14,10 +14,8 @@
 
       if(count >= 1){
         $(".special-check").prop('checked', true);
-        $(".special-label").addClass("ui-btn-active");
       } else {
         $(".special-check").prop('checked', false);
-        $(".special-label").removeClass("ui-btn-active");
       }
     });
   });
@@ -34,8 +32,7 @@
     <%= label_tag "radio-choice-3", "G" %>
     <%= radio_button_tag 'size', 'G', false, id: "radio-choice-3" %>
 
-    <%= label_tag "radio-choice-4", "Especial", class: "special-label" %>
-    <%= check_box_tag 'special', 'true', false, id: "radio-choice-4", class: "special-check" %>
+    <%= check_box_tag 'special', 'true', false, id: "radio-choice-4", class: "special-check", style: "opacity:0; position:absolute; left:9999px;" %>
 
     <%= label_tag "radio-choice-5", "Borda" %>
     <%= check_box_tag 'border', 'true', false, id: "radio-choice-5" %>
