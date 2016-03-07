@@ -22,4 +22,8 @@ module ApplicationHelper
   def back_link(path)
     return link_to "<i class='material-icons'>skip_previous</i>".html_safe, path, class: "back-link absolute-left"
   end
+
+  def set_active(type)
+    "active" if params[:category] == type
+  end
 end
