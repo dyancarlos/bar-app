@@ -7,6 +7,7 @@ class Order
 
   field :payed, type: Boolean, default: ->{ false }
   field :created_at, type: DateTime, default: ->{ Time.now }
+  field :updated_at, type: DateTime, default: ->{ Time.now }
   field :items, type: Array, default: -> { [] }
 
   belongs_to :table

@@ -11,7 +11,7 @@
 
     <br />
 
-    <% order.items.each do |item| %>
+    <% order.items.reverse_each do |item| %>
       <div class="order-items">
         <h3><%= item['quantity'] %>x <%= item['name'] %> <%= item['size'] %></h3>
     

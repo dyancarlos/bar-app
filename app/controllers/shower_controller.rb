@@ -7,7 +7,7 @@ class ShowerController < ApplicationController
     @type = params[:type]
     orders = Order.all.where(payed: false).
                        and(created_at: (1.day.ago..Time.now)).
-                       order_by(created_at: 'desc')
+                       order_by(updated_at: 'desc')
 
     if @type == "Pizzas"
       @orders = orders.select {|d| d.items.delete_if {|c| c["type"] == "Bebidas" or c["type"] == "Petiscos"}}

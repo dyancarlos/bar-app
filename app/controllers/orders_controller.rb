@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
       Order.create(session[:order])
     else
       order.update_attributes(session[:order])
+      order.update_attributes(updated_at: Time.now)
     end
 
     redirect_to :root
