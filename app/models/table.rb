@@ -14,6 +14,6 @@ class Table
         return "#B02B2C"
       end
     end
-    return "green"
+    return "#72BCCB"
   end
 end
