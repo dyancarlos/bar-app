@@ -2,10 +2,12 @@
   <h1>Mesas</h1>
 <% end %>
 
-<ul class="tables">
-  <% @tables.each do |t| %>
-    <li style="border: 1px solid <%= t.return_table_color %>">
-      <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
-    </li>
-  <% end %>
-</ul>
+<div id="tables">
+  <ul class="tables">
+    <% @tables.each do |t| %>
+      <li style="background: <%= t.return_table_color %> !important;">
+        <%= link_to t.customId, categories_path(table_id: t.id, custom_id: t.customId) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

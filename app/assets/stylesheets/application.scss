@@ -148,6 +148,11 @@ a.black { color: #000 !important; }
 .red { background: #ef9a9a; color: #b71c1c !important; }
 .orange { background: #ffb74d; color: #e65100 !important; }
 
+#tables {
+  padding: 10px;
+  text-align: center;
+}
+
 ul.tables li {
 	background: #FFF;
 	display: inline-block;
@@ -164,7 +169,8 @@ ul.tables li a {
 	width: $size;
 	text-align: center;
   font-size: 25px;
-  color: #666 !important;
+  color: #FFF !important;
   font-weight: normal !important;
   text-decoration: none;
+  text-shadow: none;
 }
