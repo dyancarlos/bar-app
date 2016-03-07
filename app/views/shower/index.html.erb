@@ -1,7 +1,7 @@
 <div align="center" class="categories" data-type="<%= params[:category] %>">
-  <%= link_to "Cozinha", shower_index_path(category: "Pizzas") %> | 
-  <%= link_to "Bebidas", shower_index_path(category: "Bebidas") %> | 
-  <%= link_to "Petiscos", shower_index_path(category: "Petiscos") %>
+  <li class="active"><%= link_to "Cozinha", shower_index_path(category: "Pizzas") %></li>
+  <li><%= link_to "Bebidas", shower_index_path(category: "Bebidas") %></li>
+  <li><%= link_to "Petiscos", shower_index_path(category: "Petiscos") %></li>
 </div>
 
 <br />

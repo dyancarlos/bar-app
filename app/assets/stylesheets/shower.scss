@@ -39,3 +39,25 @@ body {
   border-radius: 100px;
   float: left;
 }
+
+.categories {
+  background: #000;
+  padding: 10px;
+}
+
+.categories li {
+  display: inline;
+  margin: 0px 2.5px 0px 2.5px;
+}
+
+.categories li a {
+  color: #666;
+  padding: 3px 6px 3px 6px;
+  text-decoration: none;
+}
+
+.categories li.active a, .categories li a:hover {
+  background: #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+}
