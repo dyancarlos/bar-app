@@ -13,11 +13,17 @@ body {
   font-family: Arial;
 }
 
+.orders {
+  padding: 10px;
+}
+
 .order {
   background: #F1F1F1;
   padding: 15px;
-  width: 600px;
-  margin: 0 auto 10px auto;
+  width: 250px;
+  float: left;
+  margin: 5px;
+  min-height: 400px;
 }
 
 .order-items {
