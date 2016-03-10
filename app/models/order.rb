@@ -30,4 +30,16 @@ class Order
   def self.total_product(obj)
     obj["quantity"] * obj["price"]
   end
+
+  def shower_color
+    seconds = (Time.now - self.updated_at).to_i
+
+    if seconds <= 300
+      return "#D9FF8F"
+    elsif seconds > 300 and seconds <= 600
+      return "#FFD48A"
+    else
+      return "#FF877C"
+    end
+  end
 end

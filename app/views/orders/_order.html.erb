@@ -1,11 +1,12 @@
 <% unless order.items.blank? %>
-  <div class="order">
+  <div class="order" style="background: <%= order.shower_color %>">
+
     <div class="order-table-number">
       <%= order.table.customId %>
     </div>
 
     <div class="order-time">
-      <%= time_ago_in_words(order.created_at) %>
+      <%= time_ago_in_words(order.updated_at) %>
     </div>
     <div class="clear"></div>
 
