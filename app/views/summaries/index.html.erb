@@ -4,7 +4,7 @@
 <% end %>
 
 <ul data-role="listview" data-inset="true">
-  <% @summaries["items"].each do |product| %>
+  <% @summaries["items"].reverse_each do |product| %>
     <li class="product_<%= product['id'] %>">
       <h2>
         <span class="qnt_<%= product['id'] %>"><%= product["quantity"] %></span>x
